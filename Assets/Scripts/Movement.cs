@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    public float speed = 5;
+    public float speed = 30;
 
     private float speed2;
 
@@ -16,9 +16,9 @@ public class Movement : MonoBehaviour
 
         //Debug.Log($"MovementX = {movementX}, MovementY = {movementY}");
 
-        Vector2 movement = new Vector2(movementX, movementY);
+        Vector3 movement = new Vector3(movementX, 0, movementY);
 
-        transform.Translate(movement * Time.deltaTime * speed);
+        transform.Rotate(movement * Time.deltaTime * speed);
     }
 
     private void OnTriggerEnter(Collider other)
